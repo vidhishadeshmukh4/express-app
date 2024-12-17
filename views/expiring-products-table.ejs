@@ -1,0 +1,41 @@
+<!-- views/expiring-products-table.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Expiring Products</title>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+  <h1>Products Expiring Within the Next 30 Days</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Product Name</th>
+        <th>Quantity</th>
+        <th>Expiry Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% expiringProducts.forEach(function(product) { %>
+        <tr>
+          <td><%= product.product_name %></td>
+          <td><%= product.quantity %></td>
+          <td><%= product.expiry_date %></td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+</body>
+</html>
